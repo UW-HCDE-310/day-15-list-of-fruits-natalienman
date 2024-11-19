@@ -8,4 +8,11 @@ def index():
             {"name": "oranges", "quantity": 2},
             {"name": "strawberries", "quantity": 6}
     ]
+    for fruit in fruits:
+        if not fruit["name"].startswith("o"):
+            fruits.remove(fruit)
+        elif fruit["quantity"] >= 3:
+            fruits.remove(fruit)
+
+
     return render_template("index.html", fruits=fruits)
